@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <!--<link rel="stylesheet" href="../static/styles/styles.css">-->
+</head>
+<body>
+<main>
+    <h1 class="inventory_title">Inventory</h1>
+    <section class="parent">
+        {% for item in inventory %}
+            <div class="card">
+                <h3>{{ item.name }}</h3>
+                <h4>Sell In: {{ item.sell_in }}</h4>
+                <h4>Quality: {{ item.quality }}</h4>
+                <img src="../static/images/robot.svg" alt="Robot">
+            </div>
+        {% endfor %}
+    </section>
+</main>
+</body>
+</html>
